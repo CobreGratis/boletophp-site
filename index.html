@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" dir="ltr" lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="keywords" content="Projeto BoletoPhp Código-Aberto open-source Sistema Boletos bancos free gratuito" />
+    <meta name="description" content="Projeto Código-Aberto de Sistema de Boletos bancários em PHP" />
+    <meta name="Generator" content="Projeto BoletoPHP - www.boletophp.com.br - Código-Aberto de Sistema de Boletos - Licença GPL" />
+    <meta name="robots" content="index,follow" />
+    <title>Projeto BoletoPhp / Código-Aberto de Sistema de Boletos PHP</title>
+    <link rel="shortcut icon" href="http://www.boletophp.com.br/icone_boletophp.ico" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+          <h1 class="brand">BoletoPHP</h1>
+          <ul class="nav">
+            <li><a href="#oprojeto">O projeto</a></li>
+            <li><a href="#bancos">Bancos</a></li>
+            <li><a href="#ajudar">Quero ajudar!</a></li>
+            <li><a href="#grade">Grade Boletos</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#suporte">Suporte</a></li>
+            <li><a href="#creditos">Créditos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="sidebar">
+        <h3>Mantido por</h3>
+        <ul class="logos">
+          <li><a href="http://boletosimples.com.br/?utm_campaign=boletophp&utm_source=www.boletophp.com.br&utm_medium=banner" target="_blank"><img src="img/boletosimples.png" width="200" /></a></li>
+          <li><a href="http://cobregratis.com.br/?utm_campaign=boletophp&utm_source=www.boletophp.com.br&utm_medium=banner-lateral" target="_blank"><img src="img/cobregratis.png" /></a></li>
+          <li><a href="http://webbynode.com/" target="_blank"><img src="img/banner_webbynode.png" /></a></li>
+        </ul>
+        <h3>Seja Voluntário</h3>
+        <p>Você já usa um Boleto em PHP? Então <a href="#ajudar">participe</a> e nos ajude a implantar o boleto do seu banco dentro do BoletoPhp</p>
+        <h3>Apoiamos</h3>
+        <ul class="logos">
+          <li><a href="http://www.revista.espiritolivre.org/" target="_blank"><img src="img/Banner_Revista_EspiritoLivre_120x50.png" /></a></li>
+          <li><a href="http://horaextra.org/" target="_blank"><img src="img/horaextra.png" /></a></li>
+          <li><a href="http://dojorio.org/" target="_blank"><img src="img/dojorio.png" /></a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2 id="oprojeto">O projeto de boleto bancário open-source</h2>
+        <a href="."><img src="img/Logo_BoletoPhp3.gif" width="335" height="152" alt="BoletoPhp" class="logo" /></a>
+        <div class="article">
+          <div>
+            <h3><img src="img/hotshot-16x16.gif" /> Qual o principal motivo deste projeto?</h3>
+            <p>Este projeto foi criado por Elizeu Alcantara desde Maio/2006 e teve origem do Projeto BBBoletoFree que tiveram colaborações de Daniel William Schultz e Leandro Maniezo que por sua vez foi derivado do PHPBoleto de João Prado Maia e Pablo Martins F. Costa.</p>
+            <p>Criar um sistema de geração de Boletos que seja mais simples do que o PhpBoleto e que se estenda ao desenvolvimento de boletos dos bancos mais usados no mercado, além do Banco do Brasil do projeto BBBoletoFree. Este sistema é de Código Aberto e de Livre Distribuição conforme Licença GPL.</p>
+            <p>Este projeto visa atender <b>exclusivamente</b> aos profissionais e desenvolvedores na área técnica de programação PHP dos boletos, portanto se faz necessário conhecimento desejado e estudo do mesmo para a perfeita configuração do boleto a ser usado, sendo de inteira responsabilidade do profissional a instalação, funcionamento, testes e compensação do mesmo em conta bancária, pois <b>não damos suporte técnico</b>, portanto mensagens enviadas a nós com dúvidas gerais, técnicas ou solicitações de Suporte não serão respondidas.</p>
+            <p>O projeto BoletoPhp não tem foco na questão administrativa, comercial ou jurídica, pois isto compete exclusivamente aos bancos devido as suas particularidades existentes de cada carteira de cada boleto. Maiores informações sobre o conceito de Boleto de Cobrança, você pode acessar aqui o site da <a href="http://pt.wikipedia.org/wiki/Boleto_de_cobrança" target="_blank">Wikipédia</a></p>
+          </div>
+          <div class="row">
+            <div class="span8">
+              <h3><img src="img/enthusiast-16x16.gif" /> Qual a principal idéia deste projeto?</h3>
+              <p>Padronizar um formato simples de geração de boletos de cada banco baseado em um padrão composto somente de 3 arquivos php</p>
+              <p>Tomamos como exemplo o Boleto do Caixa Econômica, onde temos:</p>
+              <font color="#0000cc">- boleto_cef.php :</font>   Aqui ficam os DADOS usados para a geração do boleto<br />
+              <font color="#0000cc">- layout_cef.php :</font>    Aqui fica a estrutura HTML para a geração do boleto<br />
+              <font color="#0000cc">- funcoes_cef.php :</font>  Aqui ficam as FUNÇOES usadas para a geração do boleto <br />
+            </div>
+            <div class="span8">
+              <h3><img src="img/atb_help.gif" />Este conceito do BoletoPHP facilita a criação de boletos de outros bancos?</h3>
+              <p>Sim, pois facilita para um desenvolvedor para que seja dado continuidade no Projeto BoletoPHP para o desenvolvimento dos demais bancos, pois o principal trabalho para criar o boleto de um novo banco é criar o arquivo php de funções ( no caso acima o funcoes_cef.php) , onde estão as regras de cada banco para a geração das 2 principais informações do boleto que são a Linha Digitável e o Código de Barras, já que no layout_xxxx.php muda apenas a logo do banco e no arquivo boleto_xxxx.php acrescenta poucas variáveis específicas de cada banco.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span8">
+              <h3><img src="img/icon_poll.gif" />Como eu acompanho o desenvolvimento deste projeto?</h3>
+              <p>Atualmente o BoletoPHP está na <strong>Versão 0.17</strong> , cuja as 2 casas decimais significam a quantidade de boletos desenvolvidos dentro do sistema. Desta forma fica simples saber qual a versão mais nova disponível para Download e quantos bancos já compôe determinada versão e assim por diante.</p>
+            </div>
+            <div class="span8">
+              <h3><img src="img/group-4.gif" />Faça parte desta revolução e colabore com este projeto.</h3>
+              <p>Todos os voluntários estarão com o seu nome publicados na área de Créditos do site e do sistema, para valorizar os profissionais que sabem a importância de ter uma ferramenta com Código Aberto como esta em suas mãos e para os seus negócios e para os seus clientes, pois da mesma forma que você foi ajudado, você também pode estar retribuindo com 30 minutos do seu tempo e assim ajudando outros, e como num ciclo, sendo ajudado logo adiante com boleto de um outro banco que você pode precisar ;-)</p>
+            </div>
+          </div>
+          <hr />
+          <h2 id="bancos">Boletos/Bancos Desenvolvidos</h2>
+          <table>
+            <tr>
+              <td><img src="img/bancodobrasil.gif" /></td>
+              <td>&nbsp; Banco do Brasil</td>
+              <td>&nbsp; (Carteira 18 - Convênio de 6 , 7 ou 8 Dígitos)</td>
+            </tr>
+            <tr>
+              <td><img src="img/unibanco.gif" /></td>
+              <td>&nbsp; Unibanco</td>
+              <td>&nbsp; (Carteira Especial - Sem Registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/caixaeconomica.gif" /></td>
+              <td>&nbsp; Caixa Econômica</td>
+              <td>&nbsp; (Carteira SR [SICOB, SINCO e SIGCB]) </td>
+            </tr>
+            <tr>
+              <td><img src="img/itau.gif" /></td>
+              <td>&nbsp; Itaú</td>
+              <td>&nbsp; (Carteira 175 / 174 / 178 / 104 / 109 - Sem Registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_hsbc.gif" /></td>
+              <td>&nbsp; Hsbc</td>
+              <td>&nbsp; (Carteira CNR - Sem Registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_bradesco.gif" /></td>
+              <td>&nbsp; Bradesco</td>
+              <td>&nbsp; (Carteira 06 / 03 - Sem Registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_banestes.gif" /></td>
+              <td>&nbsp; Banestes</td>
+              <td>&nbsp; (Carteira 00 - Sem Registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_real.gif" /></td>
+              <td>&nbsp; Real</td>
+              <td>&nbsp; (Carteira 57 - Sem Registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/logonossacaixa.jpg" /></td>
+              <td>&nbsp; Nossa Caixa</td>
+              <td>&nbsp; (Carteira 5 [Cobrança Direta] ou Carteira 1 [Cobrança Simples]) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_sudameris.gif" /></td>
+              <td>&nbsp; Sudameris (Integrado ao Banco Real)</td>
+              <td>&nbsp; (Carteira 57 [Cobrança Sem registro] ou Carteira 20 [Cobrança Com registro]) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_santander_banespa.gif" /></td>
+              <td>&nbsp; Santander-Banespa (Banco 033 - Antigo 353)</td>
+              <td>&nbsp; (Carteira 102  - Sem registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_santander_banespa.gif" /></td>
+              <td>&nbsp; Santander-Banespa (Banco 033)</td>
+              <td>&nbsp; (Carteira COB  - Sem registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_bancoob.gif" /></td>
+              <td>&nbsp; Bancoob </td>
+              <td>&nbsp; (Carteira 01  [SICOOB] - Sem registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_besc.gif" /></td>
+              <td>&nbsp; BESC </td>
+              <td>&nbsp; (Carteira 25 - Sem registro) </td>
+            </tr>
+            <tr>
+              <td><img src="img/banco_sicredi.gif" /></td>
+              <td>&nbsp; Sicredi </td>
+              <td>&nbsp; (Carteira A - Simples) </td>
+            </tr>
+          </table>
+          <h2 id="ajudar">Grade de Boletos x Desenvolvedores</h2>
+          <p>A grade tem o objetivo de permitir a todos uma visão dinâmica sobre o desenvolvimento do projeto, tanto dos Boletos concluídos como dos que precisam de Voluntários. Você pode ajudar participando como Desenvolvedor do Boleto de um determinado banco, bastando clicar na Coluna Desenvolvedor e preencher o seu nome.<br />
+            <br />
+            Para você iniciar o desenvolvimento de um dos boletos basta fazer o Download dos:<br />
+            - Layout Bancário (Documentação)<br />
+            - Código-fonte do BoletoPhp<br />
+          </p>
+          <p><img src="img/ico14b.gif" /> <b>Layout Bancário</b>: Você terá as informações necessárias para gerar os dados do boleto de acordo com o padrão do banco em questão.</p>
+          <p><img src="img/icone_php.gif" /> <b>Código-fonte</b>: Você terá o Boleto da Caixa Econômica do BoletoPhp que servirá de base para a criação de novos bancos para o BoletoPhp. Ele é composto de 3 arquivos php e as imagens que compõe o boleto. A medida que você vá desenvolvendo, você mesmo administra o Status para acompanhamento de todos em tempo real (se está Concluído/Testado ou não , ou colocar porcentagem se prefirir sobre o andamento do seu desenvolvimento).</p>
+          <table id="grade">
+            <caption>Grade de Boletos - Projeto BoletoPhp</caption>
+            <tr class="yellow">
+              <th>Banco</th>
+              <th>Carteira Convênio</th>
+              <th>Desenvolvedor</th>
+              <th>Testado</th>
+              <th>Documentação</th>
+              <th>Código Fonte</th>
+            </tr>
+            <tr>
+              <td>Unibanco</td>
+              <td>Especial</td>
+              <td>Elizeu Alcantara</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Unibanco.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_unibanco.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>BB</td>
+              <td>18 p/ Convênio de 6 Dig</td>
+              <td>Leandro Maniezo</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_BB.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_bb.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>BB</td>
+              <td>18 p/ Convênio de 7 Dig</td>
+              <td>Rogerio Dias Pereira</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_BB.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_bb.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>BB</td>
+              <td>18 p/ Convênio de 8 Dig</td>
+              <td>Romeu Medeiros</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_BB.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_bb.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Caixa</td>
+              <td>SR (SICOB)</td>
+              <td>Elizeu Alcantara</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Caixa.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_cef.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Caixa</td>
+              <td>SIGCB</td>
+              <td>Davi Camargo / Leandro Vieira Pinho</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Caixa.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_cef_sigcb.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Caixa</td>
+              <td>SINCO</td>
+              <td>Carlos Magno / Reinaldo Silva / Alberto Braschi</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Caixa.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_cef_sinco.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Bradesco</td>
+              <td>06 / 03 / 09</td>
+              <td>Ramon Soares</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Bradesco.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_bradesco.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Hsbc</td>
+              <td>CNR</td>
+              <td>Bruno L. Goncalves</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_HSBC.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_hsbc.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Itau</td>
+              <td>175 174 178 104 109 157 </td>
+              <td>Glauber Portella</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Itau.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_itau.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Santander 033 (Antigo 353)</td>
+              <td>102</td>
+              <td>Fabio Lenharo</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Banespa.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_santander_banespa.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Santander Banespa 033</td>
+              <td>COB</td>
+              <td>Fabio Gabbay</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Banespa.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_banespa.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Real</td>
+              <td>57</td>
+              <td>Juan Basso</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Real.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_real.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Banrisul</td>
+              <td>-</td>
+              <td>Felipe / Wallace Belato</td>
+              <td>Não</td>
+              <td><a href='documentacao/Documentacao_Banrisul.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>BESC</td>
+              <td>25</td>
+              <td>Lucas Ferreira</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Besc.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_besc.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>NossaCaixa</td>
+              <td>5 / 1</td>
+              <td>Keitty Suelen</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_NossaCaixa.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_nossacaixa.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Mercantil</td>
+              <td>01 - Registro</td>
+              <td>Marcel Padilha</td>
+              <td>Aguarda voluntário</td>
+              <td><a href='documentacao/Documentacao_Mercantil.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Banestes</td>
+              <td>00 - Sem Registro</td>
+              <td>Fernando Chagas</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Banestes.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_banestes.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Safra</td>
+              <td>06</td>
+              <td>Fábio Souza</td>
+              <td>Aguarda voluntário</td>
+              <td><a href='documentacao/Documentacao_Safra.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Bancoob</td>
+              <td>01 (SICOOB)</td>
+              <td>Marcelo Souza</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Bancoob.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_bancoob.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+            <tr>
+              <td>Sicredi</td>
+              <td>A (Simples)</td>
+              <td>Rafael Azenha Aquini / Marco Antonio Righi / Marcelo Belinato</td>
+              <td>Sim</td>
+              <td><a href='documentacao/Documentacao_Sicredi.zip' target="_blank"><img src="img/icone_documentacao.gif" alt="Documentação" /></a></td>
+              <td> <a href='https://github.com/CobreGratis/boletophp/blob/master/boleto_sicredi.php' target="_blank"><img src="img/icone_demo.gif" alt="Demo" /></a></td>
+            </tr>
+          </table>
+          <p><img src="img/vote.jpg" align="bottom" /> Após a conclusão de um Novo Boleto <a href="mailto:boletophp@boletophp.com.br" >clique aqui</a> para enviar os arquivos com o código desenvolvido do Boleto. Na sequência será realizado testes e agregado ao BoletoPhp e disponibilizado a nova versão para Download. Será colocado o seu nome na área de Créditos do site e do arquivo de Download do BoletoPhp</p>
+          <h2 id="download">Download</h2>
+          <a href="http://cobregratis.com.br/?utm_campaign=boletophp&utm_source=www.boletophp.com.br&utm_medium=banner" target="_blank"><img src="http://cobregratis.s3.amazonaws.com/spread/cobregratis-boletophp.gif" vspace="0" border=0></a>
+            <ul class="logos">
+              <li class="span6"><a href="https://github.com/CobreGratis/boletophp/zipball/master" class="zip">Download do projeto</a></li>
+              <li class="span6"><a href="https://github.com/CobreGratis/boletophp" class="sourcecode">Código fonte do projeto</a></li>
+            </ul>
+            <h2>Pessoas que já doaram e/ou contribuiram com o Projeto BoletoPhp</h2>
+            <table>
+              <tr>
+                <td width="33%" >
+                  <ul class="users">
+                    <li>Jakson Ribeiro de Santana</li>
+                    <li>Jomar T. Gontijo</li>
+                    <li>Daniel Franco Valladão</li>
+                    <li>Wanderson Lemos Correia</li>
+                    <li>Leandro Pileggi</li>
+                    <li>Vinicius Cruz</li>
+                    <li>Rafael da Costa Rola</li>
+                    <li>Leandro Calil</li>
+                    <li>Edmir Este</li>
+                    <li>Weslei Coutinho da Silveira</li>
+                    <li>Humberto Beneduzzi</li>
+                    <li>Luiz A. Konrath</li>
+                    <li>Wil Lopes</li>
+                    <li>Bruno Assarisse</li>
+                    <li>Everaldo Matias</li>
+                    <li>José Q S Filho</li>
+                    <li>Antonio Bacelar Jr</li>
+                    <li>Douglas de Oliveira Tybel</li>
+                    <li>Ivan G Andrade</li>
+                    <li>J Iuri S Souza</li>
+                    <li>Cedilha Comunicação Digital</li>
+                  </ul>
+                </td>
+                <td width="33%">
+                  <ul class="users">
+                    <li>Paulo Costa</li>
+                    <li>Leonildo Agnaldo</li>
+                    <li>Julião Kaiser</li>
+                    <li>Ricardo Cesar Oliveira</li>
+                    <li>Joaquim Batista Ramos</li>
+                    <li>Lucas Mariano</li>
+                    <li>Paulo Roberto G. Marangon</li>
+                    <li>Te.Hospedo.com.br</li>
+                    <li>Vinicius Borsato Forte</li>
+                    <li>rTurbo.net</li>
+                    <li>Flávia Jobstraibizer</li>
+                    <li>Geordano Dalmédico</li>
+                    <li>Rodrigo Muller</li>
+                    <li>R dos Santos Sistemas</li>
+                    <li>Leonardo Ribeiro</li>
+                    <li>Tiago Neves</li>
+                    <li>Márcio Seabra</li>
+                    <li>Maycon Souza Freitas</li>
+                    <li>Lucio Flavio F. Motta</li>
+                    <li>Carlos Eduardo Silveira</li>
+                    <li>Dalton Said Henriques Júnior</li>
+                  </ul>
+                </td>
+                <td width="33%">
+                  <ul class="users">
+                    <li>Luciano Linhares Martins</li>
+                    <li>Pro Redes - Sistemas Integrados</li>
+                    <li>Ludy Amano</li>
+                    <li>Ruy Santiago</li>
+                    <li>Rael Antônio Carneiro Vaz</li>
+                    <li>Nataniel Jose Amorim Fiuza</li>
+                    <li>Paulo Henrique</li>
+                    <li>Mozart Claret</li>
+                    <li>Ronaldo Fernandes</li>
+                    <li>Angelo M. Rodrigues</li>
+                    <li>Geraldo Lima</li>
+                    <li>Filipe Ramalho Simões</li>
+                    <li>Diego Xavier</li>
+                    <li>Thyago Maciel</li>
+                    <li>Hendrickson Couto Hoffmann</li>
+                    <li>Samuel de L. Hantschel</li>
+                    <li>Wilson Franco Borges Júnior</li>
+                    <li>Leonardo Filipe</li>
+                    <li>Direto Da Fabrica Ltda</li>
+                    <li>Thiago Silva</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <h2 id="suporte">Suporte? Dúvidas?</h2>
+            <p>A implantação e o uso prático do BoletoPhp dentro da sua programação ou site <b>é de inteira responsabilidade do programador e/ou desenvolvedor</b>, pois o mesmo precisa TER um servidor (Linux ou Windows) com o PHP instalado e TER domínio sobre estes 3 pontos:</p>
+            <ol>
+              <li>Domínio de Programação PHP</li>
+              <li>Conhecimento das Políticas de Uso de boletos e de que forma é usado administrativamente (mais informações sobre este ponto, entre em contato com o gerente do seu banco).</li>
+              <li>Estudar a programação do projeto BoletoPhp</li>
+            </ol>
+            <p>O Projeto BoletoPhp (como qualquer outro projeto voluntário) depende exclusivamente da disponibilidade de tempo e conhecimento dos colaboradores voluntários que ajudam a manter e evoluir o desenvolvimento deste projeto Open-Source.</p>
+            <p>Naturalmente, considerando isto, NÃO damos Suporte e também NÃO respondemos emails com relação ao uso ou questões/dúvidas relacionados aos 3 pontos acima, pois o objetivo do Projeto BoletoPhp é DAR a solução na geração de boletos dentro da sua programação PHP, que é um dos maiores desafios hoje em dia quando se necessita deste tipo de solução.</p>
+            <p>Em resposta as várias perguntas que recebemos sobre o uso do BoletoPhp, informamos que o programador/desenvolvedor que utiliza o BoletoPhp:</p>
+            <ol>
+              <li>Deve ter, no mínimo, os conhecimentos fundamentais e básicos sobre os 3 pontos acima para que seja usado de forma correta o BoletoPhp dentro do seu projeto ou aplicação web de geração de boletos e administração dos mesmos.</li>
+              <li>É de inteira responsabilidade do profissional/programador a instalação e funcionamento do BoletoPhp em seus aplicativos.</li>
+              <li>É de inteira responsabilidade do profissional/programador os testes de pagamentos e compensação do mesmo em conta bancária, para que seja integrado e ajustado de forma responsável no desenvolvimento dos seus negócios e/ou aplicações web ANTES de que seja colocado em produção para emissão dos seus boletos junto aos seus clientes.</li>
+            </ol>
+            <p><b>As mensagens que são enviadas a nós com dúvidas gerais, técnicas ou solicitações de Suporte não serão respondidas</b>. Somente daremos retorno para mensagens referente a contatos comerciais ou notificações de bugs, através do email <a href="mailto:boletophp@boletophp.com.br" >boletophp@boletophp.com.br</a></p>
+            <h2 id="creditos">Créditos / Colaboradores</h2>
+            <table>
+              <tr>
+                <td> <img src="img/foto_elizeu_alcantara.jpg" /></td>
+                <td>&nbsp; Elizeu Alcantara <br />
+                  &nbsp;(Mantenedor e Coordenador do Projeto BoletoPhp)<br />&nbsp;(Boletos Unibanco e Caixa Econômica)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_joao_prado.jpg" /></td>
+                <td>&nbsp; João Prado Maia e Pablo Martins F. Costa <br />
+                  &nbsp;(PhpBoleto)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_leandro_maniezo.jpg" /></td>
+                <td>&nbsp; Daniel William Schultz / Leandro Maniezo / Rodrigo Dias Pereira<br />
+                  &nbsp;(BBBoletoFree e Boleto Banco do Brasil)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_glauber_portella.jpg" /></td>
+                <td>&nbsp; Glauber Portella <br />
+                  &nbsp;(Boleto Itaú)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_bruno_leonardo.jpg" /></td>
+                <td>&nbsp; Bruno Leonardo Gonçalves <br />
+                  &nbsp;(Boleto Hsbc)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_sem_imagem.gif" /></td>
+                <td>&nbsp; Ramon Soares<br />
+                  &nbsp;(Boleto Bradesco)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_fernando_chagas.jpg" /></td>
+                <td>&nbsp; Fernando José de Oliveira Chagas<br />
+                  &nbsp;(Boleto Banestes)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_juan_basso.jpg" /></td>
+                <td>&nbsp; Juan Basso<br />
+                  &nbsp;(Boleto Real)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_sem_imagem.gif" /></td>
+                <td>&nbsp; Keitty Suélen<br />
+                  &nbsp;(Boleto NossaCaixa)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_sem_imagem.gif" /></td>
+                <td>&nbsp; Flávio Yutaka Nakamura <br />
+                  &nbsp;(Boleto Sudameris)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_sem_imagem.gif" /></td>
+                <td>&nbsp; Fábio Rogério Lenharo<br />
+                  &nbsp;(Boleto Santander-Banespa 353)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_fabio_gabbay.jpg" /></td>
+                <td>&nbsp; Fábio Gabbay<br />
+                  &nbsp;(Boleto Santander-Banespa 033)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_sem_imagem.gif" /></td>
+                <td>&nbsp; Carlos Magno / Reinaldo Silva / Alberto Braschi / Alan Camilo<br />
+                  &nbsp;(Boleto Caixa - Padrão SINCO)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_sem_imagem.gif" /></td>
+                <td>&nbsp; Davi Camargo / Leandro Vieira Pinho<br />
+                  &nbsp;(Boleto Caixa - Padrão SIGCB)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_sem_imagem.gif" /></td>
+                <td>&nbsp; Marcelo Souza<br />
+                  &nbsp;(Boleto Bancoob)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_lucas_ferreira.jpg" /></td>
+                <td>&nbsp; Lucas Ferreira<br />
+                  &nbsp;(Boleto Besc)</td>
+              </tr>
+              <tr>
+                <td><img src="img/foto_sem_imagem.gif" /></td>
+                <td>&nbsp; Rafael Azenha Aquini / Marco Antonio Righi / Marcelo Belinato<br />
+                  &nbsp;(Boleto Sicredi)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="footer">
+          <p><img src="img/botao_boletophp2.gif" /> &nbsp;&nbsp; <img src="img/opensource-55x48-t.png" /> Projeto  BoletoPhp</p>
+          <p>Contatos comerciais ou Notificações de bugs, entre em contato conosco pelo <a href="mailto:boletophp@boletophp.com.br" >boletophp@boletophp.com.br</a>. Mensagens com dúvidas gerais, técnicas ou solicitações de Suporte não serão respondidas.</p>
+          <p>Projeto disponível sob a Licença <a href="http://pt.wikipedia.org/wiki/GNU_General_Public_License" target="_blank">GPL</a>.</p>
+        </div>
+      </div>
+      <script type="text/javascript">
+        if(document.location.host != 'localhost'){
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-24826213-1']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        }
+      </script>
+    </div>
+  </body>
+</html>

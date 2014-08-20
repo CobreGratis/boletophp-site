@@ -1,0 +1,47 @@
+body{
+  padding-top: 75px;
+}
+.hero-unit img.logo{
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.topbar h1{
+  margin: 0;
+}
+.topbar{
+  position: absolute;
+}
+.topbar-inner{
+  padding: 9px;
+}
+.container-fluid > .sidebar{
+  float: right;
+}
+.container-fluid > .content{
+  margin: 0 240px 0 0;
+  float: none;
+}
+ul.logos{
+  list-style: none;
+  margin: 0;
+  clear: both;
+  display: table;
+}
+ul.logos li{
+  margin: 1em 0;
+}
+#footer{
+  text-align: center;
+  margin: 3em;
+}
+a.zip, a.sourcecode{
+  background: transparent no-repeat left center;
+  display: block;
+  padding: 40px 40px 40px 75px;
+}
+a.zip{
+  background-image: url(img/gnome-mime-application-zip.png);
+}
+a.sourcecode{
+  background-image: url(img/source_php.png);
+}
